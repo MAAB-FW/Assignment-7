@@ -1,11 +1,15 @@
+import Header from "./components/Header/Header";
 
 const App = () => {
 
   return (
     <>
-      <div>
-        hi 
-      </div>
+      <header className="max-w-[1600px] mx-auto">
+        <Header />
+      </header>
+      <main>
+        
+      </main>
     </>
   );
 };
