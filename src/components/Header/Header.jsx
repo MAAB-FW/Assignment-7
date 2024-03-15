@@ -3,7 +3,7 @@ import { IoIosSearch } from "react-icons/io";
 
 const Header = () => {
     return (
-        <div className="navbar bg-base-100 my-6 lg:my-[50px]">
+        <div className="lg:w-[82.5%] mx-auto navbar bg-base-100 my-6 lg:my-[50px]">
             <div className="navbar-start">
                 {/* small device */}
                 <div className="dropdown">
@@ -36,7 +36,7 @@ const Header = () => {
                 <a className="btn btn-circle text-2xl bg-[#0BE58A]"><CgProfile /></a>
             </div>
         </div>
-        
+
     );
 };
 
