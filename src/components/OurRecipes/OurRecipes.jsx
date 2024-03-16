@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import Recipes from "../Recipes/Recipes";
 import WToCook from "../WToCook/WToCook";
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 const OurRecipes = () => {
     const [recipes, setRecipes] = useState([])
@@ -14,13 +16,19 @@ const OurRecipes = () => {
     }, [])
 
     const wantToCookButton = (recipe) => {
-        // console.log('want to cook', recipe);
-        setWantToCook([...wantToCook, recipe])
+        const isExist = wantToCook.find(item => item.recipe_id === recipe.recipe_id)
+        if (!isExist) {
+            setWantToCook([...wantToCook, recipe])
+        }
+        else {
+            toast.error("You can't add same item at a time!")
+        }
     }
 
     const preparingButton = (item) => {
-        console.log('delete add', item);
-        // const newWantToCook= wantToCook.find(recipe=>recipe.recipe_id===item.recipe_id)
+        // console.log('delete add', item);
+        const newWantToCook = wantToCook.filter(recipe => recipe.recipe_id !== item.recipe_id)
+        setWantToCook(newWantToCook)
         setCookingListItem([...cookingListItem, item])
     }
 
@@ -34,6 +42,17 @@ const OurRecipes = () => {
                 <Recipes wantToCookButton={wantToCookButton} recipes={recipes} />
                 <WToCook preparingButton={preparingButton} cookingListItem={cookingListItem} wantToCook={wantToCook} />
             </div>
+            <ToastContainer position="top-center"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="light"
+                transition:Bounce />
         </div>
     );
 };
