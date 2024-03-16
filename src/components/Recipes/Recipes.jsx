@@ -1,11 +1,20 @@
+import PropTypes from "prop-types"
 import SingleRecipe from "./SingleRecipe";
 
-const Recipes = () => {
+const Recipes = ({ recipes }) => {
+    console.log(recipes);
     return (
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 lg:gap-6">
-            <SingleRecipe />
+            {
+                recipes.map(recipe=><SingleRecipe key={recipe.recipe_id} recipe={recipe} />)
+            }
+            
         </div >
     );
 };
+
+Recipes.propTypes = {
+    recipes: PropTypes.object.isRequired
+}
 
 export default Recipes;
