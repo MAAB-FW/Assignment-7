@@ -30,6 +30,7 @@ const OurRecipes = () => {
         const newWantToCook = wantToCook.filter(recipe => recipe.recipe_id !== item.recipe_id)
         setWantToCook(newWantToCook)
         setCookingListItem([...cookingListItem, item])
+
     }
 
     return (

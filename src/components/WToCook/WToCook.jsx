@@ -64,10 +64,8 @@ const WToCook = ({ wantToCook, preparingButton, cookingListItem }) => {
                             <tr className="fontLexend font-medium text-[rgba(40,40,40,0.8)] *:pt-4 *:pb-32 *:px-[10px]">
                                 <td></td>
                                 <td></td>
-                                <td>Total Time =
-                                    45 minutes</td>
-                                <td>Total Calories =
-                                    1050 calories</td>
+                                <td>Total Time = {cookingListItem.reduce((p, c) => p + c.preparing_time, 0)} minutes</td>
+                                <td>Total Calories = {cookingListItem.reduce((p, c) => p + c.calories, 0)} calories</td>
                             </tr>
                         </tbody>
                     </table>
