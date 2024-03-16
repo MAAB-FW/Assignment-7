@@ -4,11 +4,11 @@ import SingleRecipe from "./SingleRecipe";
 const Recipes = ({ recipes }) => {
     console.log(recipes);
     return (
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 lg:gap-6">
+        <div className="lg:w-[782px] grid grid-cols-1 lg:grid-cols-2 gap-3 lg:gap-6">
             {
-                recipes.map(recipe=><SingleRecipe key={recipe.recipe_id} recipe={recipe} />)
+                recipes.map(recipe => <SingleRecipe key={recipe.recipe_id} recipe={recipe} />)
             }
-            
+
         </div >
     );
 };

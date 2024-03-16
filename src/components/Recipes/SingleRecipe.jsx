@@ -5,7 +5,7 @@ import { AiOutlineFire } from "react-icons/ai";
 const SingleRecipe = ({ recipe }) => {
     const { recipe_name, short_description, ingredients, preparing_time, calories, recipe_image } = recipe
     return (
-        <div className="card p-6 w-96 border border-[rgba(40,40,40,0.2)] ">
+        <div className="card p-6 w-full border border-[rgba(40,40,40,0.2)] ">
             <figure className="mb-6">
                 <img src={recipe_image} alt="Shoes" className="rounded-2xl" />
             </figure>

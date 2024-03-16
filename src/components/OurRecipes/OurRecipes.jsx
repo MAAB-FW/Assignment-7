@@ -17,7 +17,7 @@ const OurRecipes = () => {
                 <h1 className="font-semibold text-[24px] lg:text-[40px] text-[#150B2B] mb-6">Our Recipes</h1>
                 <p className="max-w-[80%] lg:max-w-[823px] mx-auto text-[rgba(21,11,43,0.6)] text-sm">Explore our diverse range of recipes, from hearty soups to guilt-free desserts. Each dish is meticulously crafted to strike the perfect balance between taste and calorie count.</p>
             </div>
-            <div className="flex flex-col-reverse lg:flex-row justify-between">
+            <div className="flex flex-col-reverse lg:flex-row justify-between gap-6">
                 <Recipes recipes={recipes} />
                 <WToCook />
             </div>
