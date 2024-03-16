@@ -61,7 +61,7 @@ const WToCook = ({ wantToCook, preparingButton, cookingListItem }) => {
                                 <td className="px-3 ">20 minutes</td>
                                 <td className="px-3 ">400 calories</td>
                             </tr> */}
-                            <tr className="fontLexend font-medium text-[rgba(40,40,40,0.8)] *:pt-4 *:pb-32 *:px-[10px]">
+                            <tr className="fontLexend font-medium text-[rgba(40,40,40,0.8)] *:pt-4 *:pb-16 *:lg:pb-32 *:px-[10px]">
                                 <td></td>
                                 <td></td>
                                 <td>Total Time = {cookingListItem.reduce((p, c) => p + c.preparing_time, 0)} minutes</td>
