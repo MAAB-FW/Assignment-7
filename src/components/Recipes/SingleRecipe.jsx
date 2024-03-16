@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import { IoTimeOutline } from "react-icons/io5";
 import { AiOutlineFire } from "react-icons/ai";
 
-const SingleRecipe = ({ recipe }) => {
+const SingleRecipe = ({ recipe, wantToCookButton }) => {
     const { recipe_name, short_description, ingredients, preparing_time, calories, recipe_image } = recipe
     return (
         <div className="card p-6 w-full border border-[rgba(40,40,40,0.2)] ">
@@ -25,7 +25,7 @@ const SingleRecipe = ({ recipe }) => {
                     <div className="flex items-center gap-2"><AiOutlineFire className="text-lg" /><p>{calories} calories</p></div>
                 </div>
                 <div className="card-actions">
-                    <button className="btn rounded-full bg-[#0BE58A]">Want to Cook</button>
+                    <button onClick={() => wantToCookButton(recipe)} className="btn rounded-full bg-[#0BE58A]">Want to Cook</button>
                 </div>
             </div>
         </div>
@@ -33,7 +33,8 @@ const SingleRecipe = ({ recipe }) => {
 };
 
 SingleRecipe.propTypes = {
-    recipe: PropTypes.object.isRequired
+    recipe: PropTypes.object.isRequired,
+    wantToCookButton: PropTypes.func.isRequired
 }
 
 export default SingleRecipe;
